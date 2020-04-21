@@ -158,30 +158,50 @@ main {
     main#home h1 {
       margin-top: 20vh; }
 
-.about-info {
+#about-cover {
+  background-image: url(../img/bg2.jpg);
+  background-position: center;
+  background-size: cover; }
+
+#about {
+  padding-top: 0; }
+
+.about-info .top-container {
   display: grid;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px; }
-  .about-info .bio-image {
-    grid-area: bioimage;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  padding: 2rem; }
+  .about-info .top-container .bio-image {
     margin: auto;
     border-radius: 50%;
     width: 350px;
     border: #eece1a 3px solid; }
-  .about-info .bio {
-    grid-area: bio;
+  .about-info .top-container .bio {
     font-size: 1.5rem; }
-  .about-info .job-1 {
-    grid-area: job1; }
-  .about-info .job-1 {
-    grid-area: job2; }
-  .about-info .job-1 {
-    grid-area: job3; }
-  .about-info .job {
-    background: #515151;
-    padding: 0.5rem;
-    border-bottom: #eece1a 5px solid; }
+    .about-info .top-container .bio p {
+      font-size: 1.25rem;
+      padding: 1rem; }
+
+.about-info .bottom-container {
+  visibility: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; }
+
+.about-info .job {
+  background: #515151;
+  padding: 0.5rem;
+  border-bottom: #eece1a 5px solid;
+  text-align: center; }
+  .about-info .job p {
+    text-align: justify;
+    padding: 0.5rem; }
+
+.about-info h6 {
+  font-size: 1rem; }
+
+.about-info h3 {
+  font-size: 1.25rem; }
 
 .projects {
   display: grid;
@@ -211,6 +231,25 @@ main {
   background: #c4c4c4;
   color: #333; }
 
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px white solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-in-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #eece1a;
+      color: #000; }
+      .boxes div:hover span {
+        color: #fff; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
@@ -223,7 +262,15 @@ main {
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); }
+  #about .top-container {
+    grid-template-columns: auto; }
+  #about .bottom-container {
+    grid-template-columns: 1fr 1fr; }
+    #about .bottom-container .job-3 {
+      grid-column: 1/3;
+      width: 60%;
+      justify-self: center; } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -251,14 +298,53 @@ main {
       background: url("../img/portrait_small.jpg");
       width: 150px;
       height: 150px; }
-  .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
-    grid-template-columns: 1fr; }
+  #about {
+    padding: 0;
+    overflow-x: hidden; }
+    #about .top-container {
+      grid-template-columns: 1fr; }
+    #about .bottom-container {
+      grid-template-columns: 1fr;
+      padding: 2.5rem;
+      row-gap: 2rem; }
+    #about h1 {
+      padding-top: 2rem; }
+    #about h2 {
+      margin: 0 2rem; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  #home {
+    padding: 4rem 0; }
+    #home .lg-heading {
+      width: 100vw;
+      font-size: 3.5rem; }
+    #home .sm-heading {
+      margin-left: 2rem;
+      margin-right: 2rem; } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
     margin-top: 10vh; }
+  #home {
+    padding: 4rem 0; }
+    #home .lg-heading {
+      width: 100vw;
+      font-size: 3.5rem; }
+    #home .sm-heading {
+      margin-left: 2rem;
+      margin-right: 2rem; }
+  main#about {
+    padding: 0 0.2rem;
+    overflow-x: hidden; }
+    main#about .about-info .top-container {
+      padding: 0;
+      grid-template-columns: 1fr; }
+    main#about .about-info .bottom-container {
+      padding: 1rem;
+      grid-template-columns: 1fr; }
+    main#about .lg-heading {
+      padding-top: 2rem; }
+    main#about .sm-heading {
+      margin-bottom: 1rem; }
   .projects {
     grid-template-columns: 1fr; } }

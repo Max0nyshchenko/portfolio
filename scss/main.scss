@@ -75,44 +75,63 @@ main {
 }
 
 // About
-
+#about-cover {
+  background-image: url(../img/bg2.jpg);
+  background-position: center;
+  background-size: cover;
+}
+#about {
+  padding-top: 0;
+}
 .about-info {
-  display: grid;
-  grid-template-areas:
-    'bioimage bio bio'
-    'job1 job2 job3';
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  .top-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    padding: 2rem;
 
-  .bio-image {
-    grid-area: bioimage;
-    margin: auto;
-    border-radius: 50%;
-    width: 350px;
-    border: $secondary-color 3px solid;
+    .bio-image {
+      margin: auto;
+      border-radius: 50%;
+      width: 350px;
+      border: $secondary-color 3px solid;
+    }
+
+    .bio {
+      font-size: 1.5rem;
+
+      p {
+        font-size: 1.25rem;
+        padding: 1rem;
+      }
+    }
   }
 
-  .bio {
-    grid-area: bio;
-    font-size: 1.5rem;
-  }
-
-  .job-1 {
-    grid-area: job1;
-  }
-
-  .job-1 {
-    grid-area: job2;
-  }
-
-  .job-1 {
-    grid-area: job3;
+  .bottom-container {
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
   .job {
     background: lighten($primary-color, 5);
     padding: 0.5rem;
     border-bottom: $secondary-color 5px solid;
+    text-align: center;
+
+    p {
+      text-align: justify;
+      padding: 0.5rem;
+    }
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
   }
 }
 
@@ -157,6 +176,31 @@ main {
   color: #333;
 }
 
+// Contact Page
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px white solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($primary-color);
+      }
+    }
+  }
+}
 // Footer
 #main-footer {
   text-align: center;
