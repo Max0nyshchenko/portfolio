@@ -40,6 +40,37 @@ document.addEventListener('scroll', () => {
   bottom_container.style.transform = 'translate(0,0)';
 });
 
-icons.forEach((item) => {
-  item.style.transition = 'none';
-});
+// Icons Animation
+
+const tl = new TimelineMax();
+
+tl.fromTo(
+  icons[0],
+  1,
+  { opacity: '0', transform: 'rotate(90deg) translate(4rem, 4rem)' },
+  {
+    opacity: '1',
+    transform: 'rotate(0deg) translate(0,0)',
+    ease: Power2.easeInOut,
+  }
+)
+  .fromTo(
+    icons[1],
+    0.2,
+    { opacity: '0', transform: 'rotate(90deg) translate(4rem, 4rem)' },
+    {
+      opacity: '1',
+      transform: 'rotate(0deg) translate(0,0)',
+      ease: Power2.easeInOut,
+    }
+  )
+  .fromTo(
+    icons[2],
+    0.2,
+    { opacity: '0', transform: 'rotate(90deg) translate(4rem, 4rem)' },
+    {
+      opacity: '1',
+      transform: 'rotate(0deg) translate(0,0)',
+      ease: Power2.easeInOut,
+    }
+  );
