@@ -102,6 +102,15 @@
       margin-right: 2rem;
     }
   }
+
+  #work-body {
+    #work {
+      .projects {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
+    }
+  }
 }
 
 // Smartphones
@@ -151,5 +160,34 @@
 
   .projects {
     grid-template-columns: 1fr;
+  }
+
+  #work-body {
+    overflow-x: hidden;
+
+    #work {
+      padding: 1rem;
+      padding-top: 2rem;
+
+      .projects {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+    }
+  }
+
+  #contact {
+    overflow-x: hidden;
+
+    .lg-heading {
+      font-size: 4rem;
+    }
+
+    .boxes {
+      div {
+        word-break: break-word;
+        font-size: 1.5rem;
+      }
+    }
   }
 }

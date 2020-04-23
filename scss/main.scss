@@ -48,6 +48,7 @@ header {
   color: $secondary-color;
 }
 
+// Home
 main {
   padding: 4rem;
   // height: 100%;
@@ -61,7 +62,6 @@ main {
 
       &:hover {
         color: $secondary-color;
-        @include easeOut();
       }
     }
   }
@@ -72,6 +72,16 @@ main {
       margin-top: 20vh;
     }
   }
+}
+
+.special {
+  opacity: 0;
+  transform: translate(-4rem, 4rem) rotate(90deg);
+}
+
+.show-icon {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
 }
 
 // About
@@ -112,6 +122,9 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    opacity: 0;
+    transform: translate(0, -2rem);
+    @include easeOut;
   }
 
   .job {
@@ -136,80 +149,86 @@ main {
 }
 
 // Work
-.projects {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.7rem;
-  justify-content: center;
-  padding: 4rem;
-  padding-top: 0;
+#work-body {
+  background-image: url(../img/bg3-copy.jpg);
+  background-position: center;
+  background-size: cover;
 
-  .item {
+  .projects {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    column-gap: 0.3rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7rem;
+    justify-content: center;
+    padding: 4rem;
+    padding-top: 0;
 
-    a:nth-child(1) {
-      grid-column: 1/3;
-      grid-row: 1/2;
-    }
-
-    a:nth-child(2) {
-      grid-row: 2/3;
-      grid-column: 1/2;
-    }
-
-    a:nth-child(3) {
-      grid-row: 2/3;
-      grid-column: 2/3;
-    }
-
-    img {
-      width: 100%;
-      border: 3px solid whitesmoke;
-      height: 15rem;
-      object-fit: cover;
-      object-position: center;
-
-      &:hover {
-        opacity: 0.5;
-        border-color: $secondary-color;
-        @include easeOut;
-      }
-    }
-
-    .btn {
-      display: block;
-      padding: 0.5rem 1rem;
-      border: none;
-      margin-bottom: 0.3rem;
+    .item {
       display: grid;
       grid-template-columns: auto auto;
-      align-items: center;
+      grid-template-rows: auto auto;
+      column-gap: 0.3rem;
 
-      &:hover {
-        background: $secondary-color;
-        color: set-text-color($secondary-color);
+      a:nth-child(1) {
+        grid-column: 1/3;
+        grid-row: 1/2;
       }
-    }
 
-    .btn-dark {
-      @extend .btn;
-      background: darken($primary-color, 50);
-
-      i {
-        justify-self: end;
+      a:nth-child(2) {
+        grid-row: 2/3;
+        grid-column: 1/2;
       }
-    }
 
-    .btn-light {
-      @extend .btn;
-      background: lighten($primary-color, 50);
-      color: #333;
+      a:nth-child(3) {
+        grid-row: 2/3;
+        grid-column: 2/3;
+      }
 
-      i {
-        justify-self: end;
+      img {
+        width: 100%;
+        border: 3px solid whitesmoke;
+        height: 15rem;
+        object-fit: cover;
+        object-position: center;
+
+        &:hover {
+          opacity: 0.5;
+          border-color: $secondary-color;
+          @include easeOut;
+        }
+      }
+
+      .btn {
+        display: block;
+        padding: 0.5rem 1rem;
+        border: none;
+        margin-bottom: 0.3rem;
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+
+        &:hover {
+          background: $secondary-color;
+          color: set-text-color($secondary-color);
+        }
+      }
+
+      .btn-dark {
+        @extend .btn;
+        background: darken($primary-color, 50);
+
+        i {
+          justify-self: end;
+        }
+      }
+
+      .btn-light {
+        @extend .btn;
+        background: lighten($primary-color, 50);
+        color: #333;
+
+        i {
+          justify-self: end;
+        }
       }
     }
   }

@@ -158,6 +158,15 @@ main {
     main#home h1 {
       margin-top: 20vh; }
 
+.special {
+  cursor: pointer;
+  transition: all 0.5s ease-in-out; }
+
+.show-icon {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0);
+  cursor: pointer; }
+
 #about-cover {
   background-image: url(../img/bg2.jpg);
   background-position: center;
@@ -186,7 +195,10 @@ main {
   visibility: hidden;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem; }
+  gap: 1rem;
+  opacity: 0;
+  transform: translate(0, -2rem);
+  transition: all 0.5s ease-in-out; }
 
 .about-info .job {
   background: #515151;
@@ -203,57 +215,61 @@ main {
 .about-info h3 {
   font-size: 1.25rem; }
 
-.projects {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.7rem;
-  justify-content: center;
-  padding: 4rem;
-  padding-top: 0; }
-  .projects .item {
+#work-body {
+  background-image: url(../img/bg3-copy.jpg);
+  background-position: center;
+  background-size: cover; }
+  #work-body .projects {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    column-gap: 0.3rem; }
-    .projects .item a:nth-child(1) {
-      grid-column: 1/3;
-      grid-row: 1/2; }
-    .projects .item a:nth-child(2) {
-      grid-row: 2/3;
-      grid-column: 1/2; }
-    .projects .item a:nth-child(3) {
-      grid-row: 2/3;
-      grid-column: 2/3; }
-    .projects .item img {
-      width: 100%;
-      border: 3px solid whitesmoke;
-      height: 15rem;
-      object-fit: cover;
-      object-position: center; }
-      .projects .item img:hover {
-        opacity: 0.5;
-        border-color: #eece1a;
-        transition: all 0.5s ease-in-out; }
-    .projects .item .btn, .projects .item .btn-dark, .projects .item .btn-light {
-      display: block;
-      padding: 0.5rem 1rem;
-      border: none;
-      margin-bottom: 0.3rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7rem;
+    justify-content: center;
+    padding: 4rem;
+    padding-top: 0; }
+    #work-body .projects .item {
       display: grid;
       grid-template-columns: auto auto;
-      align-items: center; }
-      .projects .item .btn:hover, .projects .item .btn-dark:hover, .projects .item .btn-light:hover {
-        background: #eece1a;
-        color: #000; }
-    .projects .item .btn-dark {
-      background: black; }
-      .projects .item .btn-dark i {
-        justify-self: end; }
-    .projects .item .btn-light {
-      background: #c4c4c4;
-      color: #333; }
-      .projects .item .btn-light i {
-        justify-self: end; }
+      grid-template-rows: auto auto;
+      column-gap: 0.3rem; }
+      #work-body .projects .item a:nth-child(1) {
+        grid-column: 1/3;
+        grid-row: 1/2; }
+      #work-body .projects .item a:nth-child(2) {
+        grid-row: 2/3;
+        grid-column: 1/2; }
+      #work-body .projects .item a:nth-child(3) {
+        grid-row: 2/3;
+        grid-column: 2/3; }
+      #work-body .projects .item img {
+        width: 100%;
+        border: 3px solid whitesmoke;
+        height: 15rem;
+        object-fit: cover;
+        object-position: center; }
+        #work-body .projects .item img:hover {
+          opacity: 0.5;
+          border-color: #eece1a;
+          transition: all 0.5s ease-in-out; }
+      #work-body .projects .item .btn, #work-body .projects .item .btn-dark, #work-body .projects .item .btn-light {
+        display: block;
+        padding: 0.5rem 1rem;
+        border: none;
+        margin-bottom: 0.3rem;
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center; }
+        #work-body .projects .item .btn:hover, #work-body .projects .item .btn-dark:hover, #work-body .projects .item .btn-light:hover {
+          background: #eece1a;
+          color: #000; }
+      #work-body .projects .item .btn-dark {
+        background: black; }
+        #work-body .projects .item .btn-dark i {
+          justify-self: end; }
+      #work-body .projects .item .btn-light {
+        background: #c4c4c4;
+        color: #333; }
+        #work-body .projects .item .btn-light i {
+          justify-self: end; }
 
 .boxes {
   display: flex;
@@ -338,7 +354,10 @@ main {
       font-size: 3.5rem; }
     #home .sm-heading {
       margin-left: 2rem;
-      margin-right: 2rem; } }
+      margin-right: 2rem; }
+  #work-body #work .projects {
+    grid-template-columns: 1fr;
+    padding: 0; } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
@@ -365,4 +384,19 @@ main {
     main#about .sm-heading {
       margin-bottom: 1rem; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  #work-body {
+    overflow-x: hidden; }
+    #work-body #work {
+      padding: 1rem;
+      padding-top: 2rem; }
+      #work-body #work .projects {
+        grid-template-columns: 1fr;
+        padding: 2rem; }
+  #contact {
+    overflow-x: hidden; }
+    #contact .lg-heading {
+      font-size: 4rem; }
+    #contact .boxes div {
+      word-break: break-word;
+      font-size: 1.5rem; } }
