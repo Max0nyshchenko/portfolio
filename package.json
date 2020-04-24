@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "Responsive portfolio website",
   "main": "app.js",
+  "homepage": "https://max0nyshchenko.github.io/portfolio/",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Max Onyshchenko",
   "license": "MIT",
   "dependencies": {
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1"
   }
 }
