@@ -105,6 +105,9 @@ main {
       margin: auto;
       border-radius: 50%;
       width: 350px;
+      height: 350px;
+      object-fit: cover;
+      object-position: top;
       border: $secondary-color 3px solid;
     }
 
