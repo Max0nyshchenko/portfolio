@@ -58,7 +58,8 @@
     .portrait {
       background: url('../img/portrait_small.jpg');
       width: 150px;
-
+      background-position: center;
+      background-size: cover;
       height: 150px;
     }
   }
@@ -119,6 +120,12 @@
     margin-top: 10vh;
   }
 
+  .menu-branding {
+    .portrait {
+      background-position: center;
+      background-size: cover;
+    }
+  }
   #home {
     padding: 4rem 0;
 
