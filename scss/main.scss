@@ -1,5 +1,5 @@
-@import 'confing';
-@import 'menu';
+@import "confing";
+@import "menu";
 
 * {
   box-sizing: border-box;
@@ -11,7 +11,7 @@ body {
   color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
 
@@ -122,12 +122,9 @@ main {
   }
 
   .bottom-container {
-    visibility: hidden;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    opacity: 0;
-    transform: translate(0, -2rem);
     @include easeOut;
   }
 
@@ -271,4 +268,4 @@ main {
   color: set-text-color($primary-color);
 }
 
-@import 'mobile';
+@import "mobile";
